@@ -1,15 +1,6 @@
-<form (submit)="addMessage()">
-    <input type="text" 
-        [(ngModel)]=newMessage
-        name="name"
-    >
-      <button type="submit">
-        Send
-      </button>
-</form>
+<app-message-form
+  *ngIf="chat"
+  (message)="addMessage($event)"></app-message-form>
 
-<ul>
-        <li *ngFor="let message of messages">
-            {{message}}  
-        </li>
-</ul>
+<app-message *ngIf="chat"
+    [chat]="chat"></app-message>

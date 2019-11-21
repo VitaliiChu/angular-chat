@@ -13,7 +13,6 @@ export class ContactListComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectedContact: any;
   @Output() select = new EventEmitter();
 
   contacts = [
@@ -22,7 +21,6 @@ export class ContactListComponent implements OnInit {
   ];
 
   selectContact(contact) {
-    this.selectedContact = contact;
     this.select.emit(contact);
   }
 }

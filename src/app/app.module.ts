@@ -6,14 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import { ChatComponent } from './chat/chat/chat.component';
-import { ChatListComponent } from './chat/chat-list/chat-list.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
+import { MessageComponent } from './message/message.component';
+import { MessageFormComponent } from './message-form/message-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatComponent,
-    ContactListComponent
+    ContactListComponent,
+    MessageComponent,
+    MessageFormComponent
   ],
   imports: [
     BrowserModule,
