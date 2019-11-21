@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, Input } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
 @Component({
@@ -8,19 +8,20 @@ import { EventEmitter } from '@angular/core';
 })
 export class ContactListComponent implements OnInit {
 
+  @Input() activeContact: string;
+  @Input() contacts: string[];
+  @Output() select = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  @Output() select = new EventEmitter();
-
-  contacts = [
-    'hodor',
-    'dany'
-  ];
-
   selectContact(contact) {
     this.select.emit(contact);
+  }
+
+  isSelected(contact) {
+    return this.activeContact === contact;
   }
 }
