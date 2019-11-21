@@ -1,4 +1,5 @@
 <li *ngFor="let contact of contacts"
-    (click)="selectContact(contact)">
-        {{contact}}  
+    (click)="selectContact(contact)"
+    [class.selected]="isSelected(contact)">
+        {{contact}}
   </li>

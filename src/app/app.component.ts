@@ -10,8 +10,12 @@ export class AppComponent {
   activeContact: any;
   title = 'my-app';
   activeChat: Chat;
-
   chats = new Map();
+  contacts = [
+    'hodor',
+    'dany',
+    'imp'
+  ];
 
   selectContact(contact) {
     this.activeContact = contact;
@@ -24,8 +28,8 @@ export class AppComponent {
 
   getChat(activeContact) {
     if (!this.chats.has(activeContact)) {
-      this.chats.set(activeContact, new Chat(activeContact))
-    } 
+      this.chats.set(activeContact, new Chat(activeContact));
+    }
 
     return this.chats.get(activeContact);
   }

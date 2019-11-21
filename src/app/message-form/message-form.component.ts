@@ -18,7 +18,7 @@ export class MessageFormComponent implements OnInit {
   newMessage: string;
 
   addMessage() {
-    this.message.emit(this.newMessage)
+    this.message.emit(this.newMessage);
     this.newMessage = '';
   }
 }
