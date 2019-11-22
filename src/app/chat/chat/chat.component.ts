@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Chat } from '../chat';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Chat } from '../../models/chat';
+import { ChatService } from '../../services/chat.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-chat',
@@ -8,9 +10,12 @@ import { Chat } from '../chat';
 })
 export class ChatComponent implements OnInit {
 
-  @Input() chat: Chat;
+  chat: Chat;
 
-  constructor() {
+  constructor(private route: ActivatedRoute, private chatService: ChatService) {
+    this.route.params.subscribe(p => {
+      this.chat = chatService.getChat(p.contact);
+    });
   }
 
   ngOnInit() {

@@ -5,8 +5,7 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 
 
 const routes: Routes = [
-  { path: 'chat', component: ContactListComponent },
-  { path: 'chat/:bot', component: ChatComponent }
+  { path: 'chat/:contact', component: ChatComponent }
 ];
 
 @NgModule({

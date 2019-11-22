@@ -3,13 +3,10 @@
 </h1>
 
 <app-contact-list
-    (select)="selectContact($event)"
-    [activeContact]="activeContact"
-    [contacts]="contacts">
+      (select)="selectContact($event)"
+      [activeContact]="activeContact"
+      [contacts]="contacts"
+    >
 </app-contact-list>
 
-<app-chat [chat]="activeChat"></app-chat>
-
-<router-outlet *ngFor="let contact of contacts">
-    <h2><a [routerLink] = "['/chat/', contact]">{{contact}}</a></h2>
-</router-outlet>
+<router-outlet></router-outlet>
