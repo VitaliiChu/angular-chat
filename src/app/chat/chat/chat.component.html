@@ -1,11 +1,10 @@
-<app-message-form
-  *ngIf="chat"
-  (message)="addMessage($event)"></app-message-form>
+<app-message-form *ngIf="chat" (message)="addMessage($event)">
+</app-message-form>
 
-<h2 *ngIf="chat">{{chat.contact}}</h2>
+<h2 *ngIf="chat">{{ chat.contact }}</h2>
 
 <div *ngIf="chat">
-    <app-message
-      *ngFor="let message of messages"
-      [message]="message"></app-message>
+  <app-message *ngFor="let message of messages | async"
+               [message]="message">
+  </app-message>
 </div>

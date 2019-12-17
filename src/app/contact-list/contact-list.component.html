@@ -1,6 +1,7 @@
-<li *ngFor="let contact of contacts"
-    (click)="selectContact(contact)"
-    [class.selected]="isSelected(contact)"
-    [routerLink] = "['/chat/', contact]">
-        {{contact}}
-  </li>
+<li
+  *ngFor="let contact of contacts"
+  routerLinkActive="selected"
+  [routerLink]="['/chat/', contact]"
+>
+  {{ contact }}
+</li>

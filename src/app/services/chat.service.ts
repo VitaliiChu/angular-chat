@@ -1,11 +1,10 @@
-import { Injectable } from '@angular/core';
-import { Chat } from '../models/chat';
+import { Injectable } from "@angular/core";
+import { Chat } from "../models/chat";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ChatService {
-
   chats = new Map();
 
   getChat(activeContact) {

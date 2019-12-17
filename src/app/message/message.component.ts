@@ -1,18 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Message } from '../chat/chat';
+import { Component, Input } from "@angular/core";
+import { Message } from "../models/chat";
 
 @Component({
-  selector: 'app-message',
-  templateUrl: './message.component.html',
-  styleUrls: ['./message.component.scss']
+  selector: "app-message",
+  templateUrl: "./message.component.html",
+  styleUrls: ["./message.component.scss"]
 })
-export class MessageComponent implements OnInit {
-
+export class MessageComponent {
   @Input() message: Message;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }
