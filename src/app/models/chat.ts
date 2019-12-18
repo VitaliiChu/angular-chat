@@ -26,12 +26,11 @@ export class Chat {
 
   subscribeBot(bot: Bot) {
     this.newMessage$.pipe(
-      filter((msg: Message) => msg.sentBy !== bot),
       bot.reply,
       map((msg: string) => {
         return {
           text: msg,
-          sentBy: bot
+          sentBy: 'bot'
         };
       })
     ).subscribe(this.newMessage$);
