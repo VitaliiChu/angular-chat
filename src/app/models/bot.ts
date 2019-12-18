@@ -1,5 +1,5 @@
 import { OperatorFunction } from 'rxjs';
-import {Message} from "./chat";
+import { Message } from './chat';
 
 export interface Reply extends OperatorFunction<Message, string> {}
 
@@ -14,5 +14,5 @@ export class Bot {
 }
 
 export function hasWord(word: string) {
-  return (msg: Message) => msg.text.indexOf(word) > -1;
+  return (msg: Message) => msg.text === word;
 }
